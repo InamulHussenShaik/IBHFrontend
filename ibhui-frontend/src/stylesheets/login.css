@@ -1,0 +1,112 @@
+/* Center form on full screen */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* light gray */
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional container styling if not using Bootstrap utilities */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Form card styling */
+.login-form {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+.login-header {
+  display: flex;
+  align-items: center;   /* vertical center */
+  justify-content: center; /* center horizontally */
+  gap: 10px;             /* space between logo and text */
+  margin-bottom: 10px;
+}
+
+.login-logo {
+  height: 60px;   /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* Form heading */
+.entryheading {
+  text-align: center;
+  font-size: 2.2rem;   /* increased size */
+  font-weight: 800;    /* extra bold */
+  color: #000000;      /* pure black */
+  margin-bottom: 20px; /* optional: spacing below */
+}
+
+
+/* Input fields */
+.login-form input.form-control {
+  border-radius: 0.75rem;
+  border: 1px solid #ced4da;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+   margin: 0.5rem auto 0 auto;
+}
+
+.login-form input.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Submit button */
+.btn-outline-blue {
+  display: block;               /* makes it a block element so margin auto works */
+  margin: 1.5rem auto 0 auto;   /* top 1.5rem, left/right auto to center, bottom 0 */
+  border: 2px solid #0d6efd;
+  color: #0d6efd;
+  background-color: transparent;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s;
+  width: 100%;                  /* optional: make button full width */
+  max-width: 200px;             /* optional: restrict maximum width */
+  text-align: center;           /* ensures text is centered */
+}
+
+.btn-outline-blue:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+
+.btn-outline-blue:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Bottom paragraph */
+.login-form p {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-top: 1rem;
+}
+
+.login-form p a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-form p a:hover {
+  text-decoration: underline;
+}

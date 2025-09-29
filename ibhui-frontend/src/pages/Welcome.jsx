@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../api";
+import "../stylesheets/welcome.css"; // custom styles
+import logo from "../assets/logo.png"; // adjust path if your logo is elsewhere
 
 export default function Welcome() {
   const navigate = useNavigate();
@@ -17,15 +19,25 @@ export default function Welcome() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
-      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm text-center">
-        <h1 className="text-3xl font-bold mb-6">Welcome to Inam Burqa House</h1>
-        <button
-          onClick={handleLogout}
-          className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition"
-        >
+    <div className="welcome-page">
+      {/* Navbar */}
+      <nav className="navbar navbar-light bg-light px-4 shadow-sm d-flex justify-content-between">
+        {/* Logo Image */}
+        <img
+          src={logo}
+          alt="Inam Burqa House Logo"
+          className="navbar-logo"
+        />
+
+        {/* Logout Button */}
+        <button onClick={handleLogout} className="btn btn-outline-danger">
           Logout
         </button>
+      </nav>
+
+      {/* Main Content */}
+      <div className="welcome-content">
+        <h1>Welcome to Inam Burqa House</h1>
       </div>
     </div>
   );

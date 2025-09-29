@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { loginUser } from "../api";
+import '../stylesheets/login.css'; // correct import path
+import logo from "../assets/logo.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -19,17 +21,17 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+            <div className="login-header">
+          <img src={logo} alt="IBH Logo" className="login-logo" />
+          <p className="entryheading">Login</p>
+        </div>
 
         <input
           type="email"
           placeholder="Email"
-          className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="form-control"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -38,24 +40,19 @@ export default function Login() {
         <input
           type="password"
           placeholder="Password"
-          className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="form-control"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
 
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
-        >
+        <button type="submit" className="btn-outline-blue loginbutton">
           Login
         </button>
 
-        <p className="mt-4 text-sm text-center text-gray-600">
+        <p>
           No account?{" "}
-          <Link to="/register" className="text-blue-600 font-medium">
-            Register
-          </Link>
+          <Link to="/register">Register</Link>
         </p>
       </form>
     </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { registerUser } from "../api";
+import "../stylesheets/register.css"; // custom styles
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -22,68 +23,72 @@ export default function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+    <div className="register-container">
+      <form onSubmit={handleSubmit} className="register-form card p-4 shadow">
+        <h2 className="text-center mb-4">Register</h2>
 
-        <input
-          type="text"
-          placeholder="Username"
-          className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Username"
+            className="form-control"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <div className="mb-3">
+          <input
+            type="email"
+            placeholder="Email"
+            className="form-control"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
 
-        <input
-          type="text"
-          placeholder="Phone"
-          className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Phone"
+            className="form-control"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+        </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <div className="mb-3">
+          <input
+            type="password"
+            placeholder="Password"
+            className="form-control"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
 
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
+        <div className="mb-4">
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            className="form-control"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
 
-        <button
-          type="submit"
-          className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition"
-        >
+        <button type="submit" className="btn btn-success w-100">
           Register
         </button>
 
-        <p className="mt-4 text-sm text-center text-gray-600">
+        <p className="text-center mt-3 text-muted">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-600 font-medium">
+          <Link to="/login" className="text-primary fw-medium">
             Login
           </Link>
         </p>

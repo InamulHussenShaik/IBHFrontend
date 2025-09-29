@@ -1,0 +1,33 @@
+/* Full-page setup */
+.welcome-page {
+  height: 100vh;
+  width: 100vw;       /* full width of viewport */
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+.navbar-logo {
+  height: 70px;       /* Adjust logo height */
+  width: auto;        /* Keep aspect ratio */
+  object-fit: contain; /* Prevent distortion */
+  margin-right: 10px; /* Add spacing from text if any */
+  cursor: pointer;    /* Looks clickable */
+}
+
+
+
+/* Centered content */
+.welcome-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Big bold welcome text */
+.welcome-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #343a40;
+  text-align: center;
+}
