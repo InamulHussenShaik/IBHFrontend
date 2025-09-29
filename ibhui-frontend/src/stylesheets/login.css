@@ -68,29 +68,32 @@ body, html {
 
 /* Submit button */
 .btn-outline-blue {
-  display: block;               /* makes it a block element so margin auto works */
-  margin: 1.5rem auto 0 auto;   /* top 1.5rem, left/right auto to center, bottom 0 */
-  border: 2px solid #0d6efd;
-  color: #0d6efd;
+  display: block;              
+  margin: 1.5rem auto 0 auto;  
+  border: 2px solid #6c757d;  /* changed border to gray */
+  color: #6c757d;              /* text color gray */
   background-color: transparent;
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   transition: all 0.3s;
-  width: 100%;                  /* optional: make button full width */
-  max-width: 200px;             /* optional: restrict maximum width */
-  text-align: center;           /* ensures text is centered */
+  width: 100%;                  
+  max-width: 200px;             
+  text-align: center;           
 }
 
+/* Hover - Gray */
 .btn-outline-blue:hover {
-  background-color: #0d6efd;
-  color: #fff;
+  background-color: #6c757d;   /* hover background gray */
+  color: #fff;                 /* text white */
+  border-color: #6c757d;       /* border gray */
 }
 
-
-.btn-outline-blue:hover {
-  background-color: #0d6efd;
+/* Alternate hover (if needed for different button) */
+.btn-outline-blue.gray-hover:hover {
+  background-color: #495057;   /* slightly darker gray */
   color: #fff;
+  border-color: #495057;
 }
 
 /* Bottom paragraph */
