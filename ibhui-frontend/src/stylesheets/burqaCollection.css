@@ -1,0 +1,50 @@
+/* Burqa Collection Styles */
+.burqa-section {
+  margin-bottom: 50px;
+}
+
+.burqa-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 50px;
+  text-align: left;
+  color: gray;
+}
+
+.burqa-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.burqa-img {
+  width: 220px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.burqa-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .burqa-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .burqa-img {
+    width: 160px; /* smaller on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .burqa-img {
+    width: 100%; /* full width on very small screens */
+    max-width: 300px;
+  }
+}
