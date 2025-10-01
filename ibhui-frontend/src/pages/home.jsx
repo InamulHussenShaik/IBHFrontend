@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../api";
-import "../stylesheets/welcome.css";
+import "../stylesheets/home.css";
 import logo from "../assets/logo.png";
 
 // Import child pages if needed later
@@ -48,8 +48,8 @@ export default function Welcome() {
             <option value="">Go to Section</option>
             <option value="burqa">Burqa Collection</option>
             <option value="maqna">Maqna Collection</option>
-            <option value="nose">Nose-Piece Collection</option>
-            <option value="scarf">Scarf Collection</option>
+            {/* <option value="nose">Nose-Piece Collection</option>
+            <option value="scarf">Scarf Collection</option> */}
           </select>
 
           {/* Logout */}
@@ -63,7 +63,7 @@ export default function Welcome() {
       <div className="welcome-content">
        {activeSection === "" && (
     <div className="text-center">
-      <h1>Welcome to Inam Teachings</h1>
+      <h1>Welcome to Inam Burqa House</h1>
       <img 
         src={logo} 
         alt="Inam Burqa House Logo" 

@@ -20,6 +20,7 @@ export default function BurqaCollection() {
           <img src={burqaDaily} alt="Burqa Daily" className="burqa-img" />
         </div>
       </div>
+      
     </div>
   );
 }
