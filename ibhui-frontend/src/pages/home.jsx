@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../api";
 import "../stylesheets/home.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/Logo.png";
 
 // Import child pages if needed later
 import BurqaCollection from "./BurqaCollection";
