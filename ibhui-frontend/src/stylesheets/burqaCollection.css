@@ -1,15 +1,15 @@
 /* Burqa Collection Styles */
 .burqa-section {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+  text-align: center;
 }
 
 .burqa-title {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #495057;
+  color: gray;
   margin-bottom: 50px;
   text-align: left;
-  color: gray;
 }
 
 .burqa-row {
@@ -21,15 +21,66 @@
   width: 220px;
   height: auto;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .burqa-img:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+.burqa-info {
+  margin-top: 10px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  width: 220px;
+  padding: 12px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.burqa-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Stock Status Styles */
+.stock {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.stock-icon {
+  font-size: 1rem;
+  color: inherit !important; /* Ensure icon follows text color */
+}
+
+/* ✅ Available (Green) */
+.available {
+  color: #28a745 !important; /* bright green */
+  background-color: #e8f9ee; /* soft green background */
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ❌ Not Available (Red) */
+.not-available {
+  color: #dc3545 !important; /* bright red */
+  background-color: #fdecec; /* soft red background */
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .burqa-title {
@@ -37,14 +88,16 @@
     margin-bottom: 20px;
   }
 
-  .burqa-img {
-    width: 160px; /* smaller on mobile */
+  .burqa-img,
+  .burqa-info {
+    width: 180px;
   }
 }
 
 @media (max-width: 480px) {
-  .burqa-img {
-    width: 100%; /* full width on very small screens */
+  .burqa-img,
+  .burqa-info {
+    width: 100%;
     max-width: 300px;
   }
 }

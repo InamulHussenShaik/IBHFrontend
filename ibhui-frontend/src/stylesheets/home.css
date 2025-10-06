@@ -8,6 +8,7 @@
   background-color: #f8f9fa;
 }
 
+
 .welcome-content {
   margin-top: 90px; /* keeps space for fixed navbar */
   padding: 20px;
@@ -32,6 +33,74 @@
   text-align: center;
   margin-bottom: 40px;
 }
+/* Logout Confirmation Popup */
+.logout-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Use 100% of viewport, not 100vw */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000; /* above navbar */
+  overflow: hidden; /* prevent scrollbars */
+  animation: fadeIn 0.3s ease;
+}
+
+.logout-popup-content {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  animation: scaleIn 0.3s ease;
+  max-width: 90%; /* never go beyond viewport */
+  width: 400px;   /* default width */
+  box-sizing: border-box; /* include padding in width */
+}
+
+/* Buttons */
+.logout-popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.logout-popup-buttons button {
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-popup-buttons .yes-btn {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+.logout-popup-buttons .no-btn {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.logout-popup-buttons button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .welcome-content {
@@ -40,10 +109,19 @@
 
   .welcome-content h1 {
     font-size: 1.8rem;
-    margin-bottom: 25px;
+    margin-top:25%
   }
 
   .navbar-logo {
     height: 50px;
   }
+   .logout-popup-content {
+    width: 85%;
+    padding: 20px;
+  }
+
+  .logout-popup-content h3 {
+    font-si
+  
+}
 }

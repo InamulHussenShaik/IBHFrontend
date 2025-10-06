@@ -3,19 +3,22 @@ import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../api";
 import "../stylesheets/home.css";
 import logo from "../assets/Logo.png";
+import LogoutPopup from "../components/LogoutPopup";
 
-// Import child pages if needed later
 import BurqaCollection from "./BurqaCollection";
 import MaqnaCollection from "./MaqnaCollection";
-// import NosePieceCollection from "./NosePieceCollection";
-// import ScarfCollection from "./ScarfCollection";
 
 export default function Welcome() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const [activeSection, setActiveSection] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
-  const handleLogout = async () => {
+  const handleLogoutClick = () => {
+    setShowPopup(true);
+  };
+
+  const confirmLogout = async () => {
     try {
       await logoutUser(token);
     } catch (err) {
@@ -38,7 +41,6 @@ export default function Welcome() {
         />
 
         <div className="d-flex align-items-center gap-3">
-          {/* Dropdown Navigation */}
           <select
             className="form-select"
             style={{ width: "200px" }}
@@ -48,12 +50,9 @@ export default function Welcome() {
             <option value="">Go to Section</option>
             <option value="burqa">Burqa Collection</option>
             <option value="maqna">Maqna Collection</option>
-            {/* <option value="nose">Nose-Piece Collection</option>
-            <option value="scarf">Scarf Collection</option> */}
           </select>
 
-          {/* Logout */}
-          <button onClick={handleLogout} className="btn btn-outline-danger">
+          <button onClick={handleLogoutClick} className="btn btn-outline-danger">
             Logout
           </button>
         </div>
@@ -61,23 +60,27 @@ export default function Welcome() {
 
       {/* Main Content */}
       <div className="welcome-content">
-       {activeSection === "" && (
-    <div className="text-center">
-      <h1>Welcome to Inam Burqa House</h1>
-      <img 
-        src={logo} 
-        alt="Inam Burqa House Logo" 
-        className="welcome-logo mt-3"
-        style={{ width: "300px", height: "auto" }}
-      />
-    </div>
-  )}
-
+        {activeSection === "" && (
+          <div className="text-center">
+            <h1>WELCOME TO </h1>
+            <img
+              src={logo}
+              alt="Inam Burqa House Logo"
+              className="welcome-logo mt-3"
+              style={{ width: "300px", height: "auto" }}
+            />
+          </div>
+        )}
         {activeSection === "burqa" && <BurqaCollection />}
         {activeSection === "maqna" && <MaqnaCollection />}
-        {activeSection === "nose" && <NosePieceCollection />}
-        {activeSection === "scarf" && <ScarfCollection />}
       </div>
+
+      {/* ✅ Logout Popup (outside content, fixed overlay) */}
+    <LogoutPopup
+  show={showPopup}
+  onConfirm={confirmLogout}
+  onCancel={() => setShowPopup(false)}
+/>
     </div>
   );
 }
