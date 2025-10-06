@@ -17,7 +17,7 @@ export default function BurqaCollection() {
           <div className="burqa-info">
             <p><strong>Type:</strong> Plane</p>
             <p><strong>Size:</strong> XL, XXL, XXXL</p>
-            <p><strong>Price:</strong> ₹400/-</p>
+            <p><strong>Price:</strong> ₹350/-</p>
             <p className="stock available">
               <FaCheckCircle className="stock-icon" /> Available
             </p>
